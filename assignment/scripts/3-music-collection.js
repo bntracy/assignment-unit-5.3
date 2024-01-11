@@ -25,11 +25,27 @@ console.log('logging myCollection array:', myCollection);
 function showCollection(collection) {
   for (let eachAlbum of collection) {
     console.log(eachAlbum.title + ' by ' + eachAlbum.artist + ', published in ' + eachAlbum.yearPublished + '.');
-  } // end for
+  } // end for loop
 } // end showCollection
 
 // test showCollection
 showCollection(myCollection); // should result in 6 lines logged to console
+
+function findByArtist(collection, artist) {
+  let matchingAlbums = [];
+  for (let eachAlbum of collection) {
+    if (eachAlbum.artist === artist) {
+      matchingAlbums.push(eachAlbum);
+    }
+  } // end for loop
+  return matchingAlbums;
+} // end findByArtist
+
+// test findByArtist
+console.log('The Beatles:', findByArtist(myCollection, 'The Beatles')); // should return an array with 3 items
+console.log('The Moody Blues:', findByArtist(myCollection, 'The Moody Blues')); // should returnn an array with 1 item
+console.log('Matchbox Twenty:', findByArtist(myCollection, 'Matchbox Twenty')); // should return an array with 2 items
+console.log('Bob Dylan:', findByArtist(myCollection, 'Bob Dylan')); // should return an empty array
 
 // PLEASE DO NOT MODIFY THIS. Just leave it down here at the bottom. Think of it
 // as a lil' chunk of friendly code that you don't need to understand right now.
