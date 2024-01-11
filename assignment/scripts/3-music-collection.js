@@ -69,6 +69,10 @@ function search(collection, searchCriteria) {
 console.log('Ray Charles, 1957:', search(myCollection, {artist: 'Ray Charles', yearPublished: 1957})); // should return an empty array
 console.log('The Beatles, 1965:', search(myCollection, {artist: 'The Beatles', yearPublished: 1965})); // should return 2 albums
 console.log('The Moody Blues, 1986:', search(myCollection, {artist: 'The Moody Blues', yearPublished: 1986})); // should return 1 album
+console.log('no search object', search(myCollection)); // should return all albums
+console.log('empty search object', search(myCollection, {})); // should return all albums
+console.log('missing artist', search(myCollection, {yearPublished: 1965})); // should return all albums
+console.log('missing year', search(myCollection, {artist: 'The Beatles'})); // should return all albums
 
 
 
